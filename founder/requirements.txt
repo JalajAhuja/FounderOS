@@ -1,0 +1,26 @@
+ipython>=8.10
+requests
+pandas
+datasets
+pyarrow
+beautifulsoup4
+lxml
+tqdm
+python-dotenv
+tenacity
+langchain-openai
+langchain-text-splitters
+tiktoken
+langchain-core
+langgraph
+qdrant-client
+fastembed
+neo4j
+openai
+jupyterlab>=3.0
+notebook
+kedro[jupyter]~=1.6.0
+kedro-datasets>=9.1
+kedro-viz>=6.7.0
+scikit-learn~=1.5.1; python_version <= '3.10'
+scikit-learn~=1.8.0; python_version > '3.10'

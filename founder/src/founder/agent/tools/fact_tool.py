@@ -1,0 +1,37 @@
+"""XBRL structured financial fact retrieval tool."""
+
+import time
+
+from founder.agent.tools.base import ToolResult, get_bundle
+from founder.retrieval.evidence import fact_to_evidence
+
+
+def search_facts(
+    query: str,
+    ticker: str | None,
+    top_k: int,
+) -> ToolResult:
+
+    start = time.perf_counter()
+
+    bundle = get_bundle()
+
+    facts = bundle.facts.search(
+        query=query,
+        ticker=ticker,
+        top_k=top_k,
+    )
+
+    evidence = [
+        fact_to_evidence(fact, index)
+        for index, fact in enumerate(facts)
+    ]
+
+    latency_ms = (time.perf_counter() - start) * 1000
+
+    return ToolResult(
+        success=True,
+        evidence=evidence,
+        metadata={"count": len(evidence)},
+        latency_ms=latency_ms,
+    )
