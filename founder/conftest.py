@@ -3,6 +3,16 @@
 import pytest
 
 
+def pytest_collection_modifyitems(items):
+    """Mark every test that is not integration/slow as ``unit``.
+
+    Keeps ``pytest -m unit`` meaningful without hand-marking each test.
+    """
+    for item in items:
+        if not (item.get_closest_marker("integration") or item.get_closest_marker("slow")):
+            item.add_marker(pytest.mark.unit)
+
+
 @pytest.fixture
 def sample_query() -> str:
     """Sample query for testing."""

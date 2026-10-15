@@ -3,7 +3,6 @@ from pathlib import Path
 
 from dotenv import load_dotenv
 
-
 load_dotenv()
 
 
@@ -65,6 +64,6 @@ OPENAI_MODEL = os.getenv(
 
 # Start small while testing.
 # Set to None to process everything.
-MAX_CHUNKS = 100
+MAX_CHUNKS = None
 
 BATCH_SIZE = 5

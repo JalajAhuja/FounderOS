@@ -1,7 +1,8 @@
 """Deduplication and deterministic event ordering."""
 
 from collections import OrderedDict
-from typing import Iterable
+from collections.abc import Iterable
+
 from founder.news.events import Event
 
 

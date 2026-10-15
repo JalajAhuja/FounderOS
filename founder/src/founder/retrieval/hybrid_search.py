@@ -1,22 +1,21 @@
+from fastembed import (
+    SparseTextEmbedding,
+    TextEmbedding,
+)
 from qdrant_client import (
     QdrantClient,
     models,
 )
 
-from fastembed import (
-    SparseTextEmbedding,
-    TextEmbedding,
-)
-
 from founder.retrieval.config import (
-    QDRANT_URL,
     COLLECTION_NAME,
-    DENSE_MODEL_NAME,
-    SPARSE_MODEL_NAME,
-    DENSE_VECTOR_NAME,
-    SPARSE_VECTOR_NAME,
-    PREFETCH_LIMIT,
     DEFAULT_TOP_K,
+    DENSE_MODEL_NAME,
+    DENSE_VECTOR_NAME,
+    PREFETCH_LIMIT,
+    QDRANT_URL,
+    SPARSE_MODEL_NAME,
+    SPARSE_VECTOR_NAME,
 )
 
 

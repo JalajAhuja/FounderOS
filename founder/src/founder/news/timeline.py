@@ -1,7 +1,8 @@
 """Date-aware event queries."""
 
+from collections.abc import Iterable
 from datetime import date, datetime, timedelta
-from typing import Iterable
+
 from founder.news.events import Event
 
 

@@ -22,3 +22,12 @@ README.md
 docs/
 notebooks/
 tests/
+
+# Keep the image small and free of secrets
+data/
+conf/local/
+docs/
+tests/
+notebooks/
+.env*
+!.env.example

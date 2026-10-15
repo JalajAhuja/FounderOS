@@ -7,7 +7,6 @@ from founder.agent.planner import (
     build_retrieval_plan,
 )
 
-
 KNOWN_TICKERS = ["MSFT"]
 
 

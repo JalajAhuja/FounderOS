@@ -2,7 +2,6 @@
 
 from dataclasses import dataclass
 from datetime import datetime
-from typing import Optional
 from uuid import UUID
 
 
@@ -13,7 +12,7 @@ class Session:
     session_id: UUID
     created_at: datetime
     updated_at: datetime
-    user_id: Optional[str] = None
+    user_id: str | None = None
     status: str = "active"  # active | closed
 
 
@@ -35,10 +34,10 @@ class AgentRun:
     query_id: UUID
     status: str  # pending | complete | error
     started_at: datetime
-    completed_at: Optional[datetime] = None
-    latency_ms: Optional[int] = None
-    error: Optional[str] = None
-    checkpoint_data: Optional[dict] = None
+    completed_at: datetime | None = None
+    latency_ms: int | None = None
+    error: str | None = None
+    checkpoint_data: dict | None = None
 
 
 @dataclass
@@ -60,5 +59,5 @@ class Feedback:
     feedback_id: UUID
     run_id: UUID
     rating: int  # 1-5
-    comment: Optional[str] = None
-    created_at: Optional[datetime] = None
+    comment: str | None = None
+    created_at: datetime | None = None

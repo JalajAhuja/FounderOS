@@ -1,9 +1,8 @@
 """Streaming response models and events."""
 
+import json
 from dataclasses import dataclass
 from datetime import datetime
-from typing import Optional
-import json
 
 
 @dataclass
@@ -12,7 +11,7 @@ class StatusEvent:
 
     type: str = "status"
     message: str = ""
-    timestamp: Optional[datetime] = None
+    timestamp: datetime | None = None
 
     def to_json(self) -> str:
         return json.dumps({
@@ -33,8 +32,8 @@ class EvidenceEvent:
     type: str = "evidence"
     evidence_id: str = ""
     source: str = ""  # SEC, earnings_call, news, graph
-    ticker: Optional[str] = None
-    date: Optional[str] = None
+    ticker: str | None = None
+    date: str | None = None
 
     def to_json(self) -> str:
         return json.dumps({
@@ -88,7 +87,7 @@ class ErrorEvent:
 
     type: str = "error"
     error_message: str = ""
-    trace_id: Optional[str] = None
+    trace_id: str | None = None
 
     def to_json(self) -> str:
         return json.dumps({

@@ -1,7 +1,8 @@
 """Conservative event extraction from licensed news metadata."""
 
+from collections.abc import Iterable
 from dataclasses import asdict, dataclass
-from typing import Any, Iterable
+from typing import Any
 
 EVENT_KEYWORDS = {
     "product_launch": ("launch", "introduced", "unveiled", "released"),

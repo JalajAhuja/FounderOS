@@ -11,7 +11,6 @@ import os
 
 from founder.retrieval.evidence import Evidence
 
-
 RERANKER_ENABLED = (
     os.getenv("RERANKER_ENABLED", "true").lower() == "true"
 )

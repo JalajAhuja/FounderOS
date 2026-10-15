@@ -1,6 +1,7 @@
 """Command line export entry point."""
 
 import argparse
+
 from founder.export.investigation import build_investigation_pack, write_investigation
 
 

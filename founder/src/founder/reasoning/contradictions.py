@@ -16,7 +16,6 @@ from founder.reasoning.claims import Claim, extract_all_claims
 from founder.reasoning.dates import parse_date, quarter_from_month
 from founder.retrieval.evidence import Evidence
 
-
 POSITIVE_WORDS = {
     "accelerating",
     "accelerate",

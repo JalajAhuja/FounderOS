@@ -8,7 +8,6 @@ in `citations.py` from the referenced evidence, not from model output.
 
 from founder.retrieval.evidence import Evidence
 
-
 SYSTEM_PROMPT = """
 You are FounderOS, a research assistant that answers strategic questions
 about public companies using only the evidence provided to you.

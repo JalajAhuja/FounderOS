@@ -1,12 +1,12 @@
 """Structured execution tracing for reproducibility and observability."""
 
 import json
-import time
-from dataclasses import dataclass, asdict, field
-from typing import Any, Callable, Optional
-from functools import wraps
 import os
-
+import time
+from collections.abc import Callable
+from dataclasses import asdict, dataclass, field
+from functools import wraps
+from typing import Any
 
 TRACING_ENABLED = (
     os.getenv("TRACING_ENABLED", "true").lower() == "true"

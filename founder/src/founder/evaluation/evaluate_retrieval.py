@@ -54,7 +54,7 @@ def _match_rate(evidence, expected_tickers, expected_sources):
 
 def evaluate(reranker_enabled: bool):
 
-    with open(QUESTIONS_FILE, "r", encoding="utf-8") as f:
+    with open(QUESTIONS_FILE, encoding="utf-8") as f:
         questions = json.load(f)
 
     retriever = HybridRetriever()

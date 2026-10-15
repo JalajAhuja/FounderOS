@@ -1,7 +1,7 @@
 """Optional Langfuse integration for FounderOS traces."""
 
 import os
-from typing import Optional, TYPE_CHECKING
+from typing import TYPE_CHECKING
 
 if TYPE_CHECKING:
     from founder.observability.tracer import Trace
@@ -15,9 +15,9 @@ LANGFUSE_PUBLIC_KEY = os.getenv("LANGFUSE_PUBLIC_KEY")
 LANGFUSE_SECRET_KEY = os.getenv("LANGFUSE_SECRET_KEY")
 
 
-def push_trace_to_langfuse(trace: "Trace") -> Optional[str]:
+def push_trace_to_langfuse(trace: "Trace") -> str | None:
     """Push a trace to Langfuse. Returns trace ID if successful, None otherwise.
-    
+
     This is a no-op stub if Langfuse is disabled or credentials are missing.
     """
 
@@ -34,7 +34,7 @@ def push_trace_to_langfuse(trace: "Trace") -> Optional[str]:
         )
 
         # Create a trace in Langfuse from the Trace object.
-        trace_dict = trace.to_dict()
+        trace.to_dict()
 
         # For now, just log the trace data as an event.
         # Full Langfuse integration (hierarchy, generations, scores) is

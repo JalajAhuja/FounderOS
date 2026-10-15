@@ -1,8 +1,8 @@
 """Unit tests for fiscal period resolution."""
 
 from founder.storage.period_mapping import (
-    resolve_fiscal_period,
     _month_to_quarter,
+    resolve_fiscal_period,
 )
 
 

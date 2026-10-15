@@ -2,7 +2,6 @@ from pathlib import Path
 
 from bs4 import BeautifulSoup
 
-
 # ============================================================
 # CONFIG
 # ============================================================
@@ -171,8 +170,8 @@ def main():
     if not DOCUMENTS_DIR.exists():
 
         print(
-            f"ERROR: Documents directory "
-            f"does not exist:"
+            "ERROR: Documents directory "
+            "does not exist:"
         )
 
         print(

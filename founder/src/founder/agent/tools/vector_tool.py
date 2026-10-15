@@ -6,7 +6,6 @@ from founder.agent.tools.base import ToolResult, get_bundle
 from founder.retrieval.evidence import qdrant_to_evidence
 from founder.retrieval.reranker import RERANK_CANDIDATES, Reranker
 
-
 _reranker = Reranker()
 
 

@@ -1,8 +1,8 @@
 """Manual evaluation experiment runner (Step 20)."""
 
 from pathlib import Path
+
 from founder.evaluation.dataset import load_labeled_dataset
-from founder.evaluation.metrics import compute_ndcg, compute_mrr, compute_recall
 
 
 def run_experiment():
@@ -41,12 +41,12 @@ def run_experiment():
         print("No labeled questions found in dataset.")
         return
 
-    print(f"\n== Retrieval Evaluation ==\n")
+    print("\n== Retrieval Evaluation ==\n")
     print(f"Questions: {len(questions)}")
 
-    print(f"\nNote: Full ground-truth labeling (relevant_evidence_ids)")
-    print(f"is manual work. These are sample metrics computed over")
-    print(f"whatever labels exist in the dataset.\n")
+    print("\nNote: Full ground-truth labeling (relevant_evidence_ids)")
+    print("is manual work. These are sample metrics computed over")
+    print("whatever labels exist in the dataset.\n")
 
     for question in questions[:3]:
 

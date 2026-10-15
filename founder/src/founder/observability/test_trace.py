@@ -1,9 +1,10 @@
 """Manual verification script for tracing (Step 19)."""
 
-import uuid
 import time
-from founder.observability.tracer import Trace, set_current_trace, trace_node
+import uuid
+
 from founder.agent.runner import run_query
+from founder.observability.tracer import Trace, set_current_trace
 
 
 def main():
@@ -25,7 +26,7 @@ def main():
 
     try:
 
-        result = run_query(trace.query)
+        run_query(trace.query)
 
         trace.total_latency_ms = (time.perf_counter() - start) * 1000
 
@@ -55,7 +56,7 @@ def main():
 
     print(f"\nJSON size: {len(trace.to_json())} bytes")
 
-    print(f"\nTrace is reproducible via:")
+    print("\nTrace is reproducible via:")
     print(f"  trace_id={trace_id}")
     print(f"  query={trace.query}")
     print(f"  model={trace.model_config}")

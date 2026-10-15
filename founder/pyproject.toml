@@ -53,9 +53,6 @@ tools = "['Linting', 'Testing', 'Custom Logging', 'Data Structure', 'PySpark']"
 example_pipeline = "False"
 source_dir = "src"
 
-[tool.pytest.ini_options]
-addopts = "--cov-report term-missing --cov src/founder -ra"
-
 [tool.coverage.report]
 fail_under = 0
 show_missing = true
@@ -83,4 +80,19 @@ select = [
 ]
 ignore = [
     "E501",
+    "PLR2004",  # magic values are fine in this codebase
+    "PLR0913",  # many-argument functions
+    "PLR0917",
+    "PLW2901",  # loop variable reassignment
+    "PLW0603",  # module-level lazy singletons use `global`
+    "PLC0415",  # lazy imports keep optional deps (langfuse, fastembed) optional
+    "PLR0912",  # complexity of ingestion/validation scripts
+    "PLR0915",
+    "PLW0108",
+    "UP038",    # deprecated upstream; style-only
 ]
+
+[tool.ruff.lint.per-file-ignores]
+# CLI / ingestion scripts and tests legitimately print.
+"src/founder/**/*" = ["T201"]
+"tests/**/*" = ["T201"]

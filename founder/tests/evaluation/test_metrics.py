@@ -1,8 +1,8 @@
 """Unit tests for retrieval evaluation metrics."""
 
 from founder.evaluation.metrics import (
-    compute_ndcg,
     compute_mrr,
+    compute_ndcg,
     compute_recall,
 )
 

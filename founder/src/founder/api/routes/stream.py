@@ -1,15 +1,16 @@
 """Streaming route for real-time query execution."""
 
 import asyncio
+
 from fastapi import APIRouter, HTTPException
 from fastapi.responses import StreamingResponse
 
 from founder.api.schemas.stream import (
-    StatusEvent,
-    EvidenceEvent,
     AnswerEvent,
     CompleteEvent,
     ErrorEvent,
+    EvidenceEvent,
+    StatusEvent,
 )
 
 router = APIRouter(prefix="/api/v1", tags=["streaming"])

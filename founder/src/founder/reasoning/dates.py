@@ -11,7 +11,6 @@ inferred one.
 import re
 from datetime import datetime
 
-
 DATE_FORMATS = [
     "%Y-%m-%d",
     "%Y-%m-%d %H:%M:%S",

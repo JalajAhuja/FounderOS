@@ -1,7 +1,6 @@
 import json
-from pathlib import Path
 from collections import Counter
-
+from pathlib import Path
 
 CHUNKS_FILE = Path(
     "data/04_chunks/chunks.jsonl"
@@ -24,7 +23,6 @@ def main():
 
     with open(
         CHUNKS_FILE,
-        "r",
         encoding="utf-8",
     ) as f:
 

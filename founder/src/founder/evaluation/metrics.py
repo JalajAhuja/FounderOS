@@ -1,7 +1,7 @@
 """Retrieval evaluation metrics (NDCG, MRR, Recall)."""
 
 import math
-from typing import Sequence
+from collections.abc import Sequence
 
 
 def compute_dcg(relevances: Sequence[float], k: int | None = None) -> float:

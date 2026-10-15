@@ -8,7 +8,6 @@ to run, before any retrieval happens.
 
 from founder.retrieval.query_analyzer import analyze_query, normalize
 
-
 INTENT_TEMPORAL = "temporal"
 INTENT_RELATIONSHIP = "relationship"
 INTENT_FACTUAL = "factual"

@@ -6,23 +6,21 @@ from fastembed import (
     SparseTextEmbedding,
     TextEmbedding,
 )
-
 from qdrant_client import (
     QdrantClient,
     models,
 )
 
 from founder.retrieval.config import (
+    BATCH_SIZE,
     CHUNKS_FILE,
-    QDRANT_URL,
     COLLECTION_NAME,
     DENSE_MODEL_NAME,
-    SPARSE_MODEL_NAME,
     DENSE_VECTOR_NAME,
+    QDRANT_URL,
+    SPARSE_MODEL_NAME,
     SPARSE_VECTOR_NAME,
-    BATCH_SIZE,
 )
-
 
 # ============================================================
 # HELPERS
@@ -37,7 +35,6 @@ def read_jsonl_batches(
 
     with open(
         path,
-        "r",
         encoding="utf-8",
     ) as f:
 

@@ -1,15 +1,14 @@
 """PostgreSQL repository layer (mock for now)."""
 
 from datetime import datetime
-from typing import Optional
 from uuid import UUID, uuid4
 
 from founder.storage.models import (
-    Session,
-    QueryRecord,
     AgentRun,
     Answer,
     Feedback,
+    QueryRecord,
+    Session,
 )
 
 
@@ -20,7 +19,7 @@ class SessionRepository:
         self._sessions: dict[UUID, Session] = {}
 
     def create_session(
-        self, user_id: Optional[str] = None
+        self, user_id: str | None = None
     ) -> Session:
         """Create a new session."""
 
@@ -38,7 +37,7 @@ class SessionRepository:
 
         return session
 
-    def get_session(self, session_id: UUID) -> Optional[Session]:
+    def get_session(self, session_id: UUID) -> Session | None:
         """Retrieve session by ID."""
 
         return self._sessions.get(session_id)
@@ -74,7 +73,7 @@ class QueryRepository:
 
         return record
 
-    def get_query(self, query_id: UUID) -> Optional[QueryRecord]:
+    def get_query(self, query_id: UUID) -> QueryRecord | None:
         """Retrieve query by ID."""
 
         return self._queries.get(query_id)
@@ -133,7 +132,7 @@ class AgentRunRepository:
             run.error = error
             run.completed_at = datetime.utcnow()
 
-    def get_run(self, run_id: UUID) -> Optional[AgentRun]:
+    def get_run(self, run_id: UUID) -> AgentRun | None:
         """Retrieve run by ID."""
 
         return self._runs.get(run_id)
@@ -168,7 +167,7 @@ class AnswerRepository:
 
         return answer
 
-    def get_answer(self, answer_id: UUID) -> Optional[Answer]:
+    def get_answer(self, answer_id: UUID) -> Answer | None:
         """Retrieve answer by ID."""
 
         return self._answers.get(answer_id)
@@ -184,7 +183,7 @@ class FeedbackRepository:
         self,
         run_id: UUID,
         rating: int,
-        comment: Optional[str] = None,
+        comment: str | None = None,
     ) -> Feedback:
         """Save user feedback."""
 
@@ -200,7 +199,7 @@ class FeedbackRepository:
 
         return feedback
 
-    def get_feedback(self, run_id: UUID) -> Optional[Feedback]:
+    def get_feedback(self, run_id: UUID) -> Feedback | None:
         """Retrieve feedback for run."""
 
         for feedback in self._feedback.values():

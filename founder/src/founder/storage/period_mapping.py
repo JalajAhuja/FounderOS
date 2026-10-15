@@ -1,8 +1,6 @@
 """Fiscal period resolution and harmonization."""
 
 from datetime import datetime
-from typing import Optional
-
 
 FISCAL_CALENDARS = {
     "MSFT": {"fiscal_year_end_month": 6},

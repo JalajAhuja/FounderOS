@@ -1,6 +1,5 @@
 """Application settings and configuration."""
 
-from typing import Optional
 
 from pydantic_settings import BaseSettings
 
@@ -14,7 +13,7 @@ class Settings(BaseSettings):
 
     # Qdrant
     qdrant_url: str
-    qdrant_api_key: Optional[str] = None
+    qdrant_api_key: str | None = None
 
     # Neo4j
     neo4j_uri: str
@@ -22,12 +21,12 @@ class Settings(BaseSettings):
     neo4j_password: str
 
     # Database
-    database_url: Optional[str] = None
+    database_url: str | None = None
 
     # Langfuse
     langfuse_enabled: bool = False
-    langfuse_public_key: Optional[str] = None
-    langfuse_secret_key: Optional[str] = None
+    langfuse_public_key: str | None = None
+    langfuse_secret_key: str | None = None
     langfuse_host: str = "https://cloud.langfuse.com"
 
     # Reranker
@@ -45,7 +44,7 @@ class Settings(BaseSettings):
         extra = "ignore"
 
 
-_settings: Optional[Settings] = None
+_settings: Settings | None = None
 
 
 def get_settings() -> Settings:

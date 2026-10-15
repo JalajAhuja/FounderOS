@@ -17,7 +17,7 @@ class LabeledQuestion:
 def load_labeled_dataset(path: str | Path) -> list[LabeledQuestion]:
     """Load evaluation questions with relevance labels from JSON."""
 
-    with open(path, "r", encoding="utf-8") as f:
+    with open(path, encoding="utf-8") as f:
         data = json.load(f)
 
     questions = []

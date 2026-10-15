@@ -1,4 +1,8 @@
-from founder.export.investigation import build_investigation_pack, investigation_json, write_investigation
+from founder.export.investigation import (
+    build_investigation_pack,
+    investigation_json,
+    write_investigation,
+)
 
 
 def test_investigation_pack_contains_claims_and_sources(tmp_path):

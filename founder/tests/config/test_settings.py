@@ -2,7 +2,7 @@
 
 import pytest
 
-from founder.config.settings import Settings, validate_settings
+from founder.config.settings import Settings
 
 
 def test_settings_load_from_env(monkeypatch):

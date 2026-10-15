@@ -19,7 +19,6 @@ from founder.reasoning.contradictions import detect_contradictions
 from founder.reasoning.temporal import compare_periods, group_by_period
 from founder.retrieval.query_analyzer import analyze_query
 
-
 # ============================================================
 # QUERY ANALYSIS / PLANNING
 # ============================================================

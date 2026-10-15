@@ -2,7 +2,6 @@ import json
 import re
 from pathlib import Path
 
-
 NEWS_FILE = Path(
     "data/03_primary/news.jsonl"
 )
@@ -61,7 +60,6 @@ class NewsRetriever:
 
         with open(
             NEWS_FILE,
-            "r",
             encoding="utf-8",
         ) as f:
 

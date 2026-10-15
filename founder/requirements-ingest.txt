@@ -1,0 +1,10 @@
+# Only needed to (re)build the corpus: download, clean, chunk, extract.
+-r requirements.txt
+
+pandas
+numpy
+pyarrow
+datasets
+beautifulsoup4
+lxml
+tqdm

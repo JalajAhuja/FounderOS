@@ -2,7 +2,6 @@ import json
 import re
 from pathlib import Path
 
-
 FACTS_FILE = Path(
     "data/03_primary/facts.jsonl"
 )
@@ -141,7 +140,6 @@ class FactRetriever:
 
         with open(
             FACTS_FILE,
-            "r",
             encoding="utf-8",
         ) as f:
 

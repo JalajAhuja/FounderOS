@@ -1,12 +1,11 @@
 from qdrant_client import QdrantClient, models
 
 from founder.retrieval.config import (
-    QDRANT_URL,
     COLLECTION_NAME,
     DENSE_VECTOR_NAME,
+    QDRANT_URL,
     SPARSE_VECTOR_NAME,
 )
-
 
 DENSE_VECTOR_SIZE = 768
 

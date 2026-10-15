@@ -3,15 +3,12 @@ import json
 from founder.graph.config import (
     EXTRACTIONS_FILE,
 )
-
 from founder.graph.neo4j_client import (
     Neo4jClient,
 )
-
 from founder.graph.schema import (
     RELATIONSHIP_TYPES,
 )
-
 
 ALLOWED_RELATIONSHIPS = set(RELATIONSHIP_TYPES)
 
@@ -441,7 +438,6 @@ def main():
 
     with open(
         EXTRACTIONS_FILE,
-        "r",
         encoding="utf-8",
     ) as f:
 

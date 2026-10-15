@@ -1,6 +1,7 @@
 """Unit tests for the tracing module."""
 
 import json
+
 from founder.observability.tracer import (
     Trace,
     TraceEvent,

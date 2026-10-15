@@ -1,0 +1,10 @@
+# Optional: exploration tooling, deliberately kept out of CI and Docker.
+-r requirements-dev.txt
+
+ipython>=8.10
+jupyterlab>=3.0
+notebook
+kedro[jupyter]~=1.6.0
+kedro-datasets>=9.1
+kedro-viz>=6.7.0
+scikit-learn~=1.8.0

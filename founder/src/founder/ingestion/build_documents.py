@@ -1,7 +1,6 @@
 import json
 from pathlib import Path
 
-
 # ============================================================
 # CONFIG
 # ============================================================
@@ -153,7 +152,6 @@ def build_document(
     )
 
     # Reconstruct SEC URL
-    cik = None
 
     document = {
 
@@ -235,7 +233,7 @@ def main():
     if not CLEAN_DIR.exists():
 
         print(
-            f"ERROR: Clean directory does not exist:"
+            "ERROR: Clean directory does not exist:"
         )
 
         print(

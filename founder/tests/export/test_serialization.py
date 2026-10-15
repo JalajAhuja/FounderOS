@@ -1,13 +1,14 @@
 """Unit tests for export serialization."""
 
 import json
+
 from founder.export.serialization import (
-    serialize_evidence,
     serialize_answer,
+    serialize_evidence,
     serialize_full_response,
 )
+from founder.generation.schemas import Citation, Claim, GeneratedAnswer
 from founder.retrieval.evidence import Evidence
-from founder.generation.schemas import Claim, Citation, GeneratedAnswer
 
 
 def test_serialize_evidence():

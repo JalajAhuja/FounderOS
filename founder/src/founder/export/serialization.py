@@ -1,12 +1,12 @@
 """Deterministic JSON serialization for answers, evidence, and traces."""
 
 import json
-from typing import Optional, TYPE_CHECKING
+from typing import TYPE_CHECKING, Optional
 
 if TYPE_CHECKING:
-    from founder.retrieval.evidence import Evidence
     from founder.generation.schemas import GeneratedAnswer
     from founder.observability.tracer import Trace
+    from founder.retrieval.evidence import Evidence
 
 
 def serialize_evidence(evidence: "Evidence") -> dict:

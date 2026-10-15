@@ -1,19 +1,17 @@
 import json
-from pathlib import Path
 
 from openai import OpenAI
 
 from founder.graph.config import (
     CHUNKS_FILE,
     EXTRACTIONS_FILE,
+    MAX_CHUNKS,
     OPENAI_API_KEY,
     OPENAI_MODEL,
-    MAX_CHUNKS,
 )
 from founder.graph.schema import (
     SYSTEM_PROMPT,
 )
-
 
 client = OpenAI(
     api_key=OPENAI_API_KEY
@@ -230,7 +228,6 @@ def load_chunks():
 
     with open(
         CHUNKS_FILE,
-        "r",
         encoding="utf-8",
     ) as f:
 
